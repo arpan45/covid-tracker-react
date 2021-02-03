@@ -31,7 +31,7 @@ export default function SimpleCard(props) {
   const classes = useStyles();
 
   function numberWithCommas(x) {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
   return (
     <Card className={classes.root}>
