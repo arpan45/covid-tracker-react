@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    minHeight: '200px'
   },
   formControl: {
     margin: theme.spacing(1),
@@ -96,12 +97,13 @@ function App() {
           <Grid container spacing={3}>
             <Grid item md={12}>
               <h1>Covid-19 Tracking Application</h1>
+              {data.country ? `Selected country:  ` + country : `World Data`}
             </Grid>
             <Grid item lg={3} md={3} xs={6}>
               <Card className={classes.paper} title="Total Cases" value={data.active} />
             </Grid>
             <Grid item lg={3} md={3} xs={6}>
-              <Card className={classes.paper} title="Deaths" value={data.deaths} />
+              <Card className={classes.paper} title="Total Deaths" value={data.deaths} />
             </Grid>
             <Grid item lg={3} md={3} xs={6}>
               <Card className={classes.paper} title="Recovered" value={data.recovered} />
@@ -109,7 +111,7 @@ function App() {
             <Grid item lg={3} md={3} xs={6}>
               <Card className={classes.paper} title="Tests" value={data.tests} />
             </Grid>
-            <Grid item lg={12}>
+            <Grid item lg={12} md={12}>
               <FormControl className={classes.formControl + ` label`}>
                 <InputLabel className={classes.label} id="demo-simple-select-label">Select Country</InputLabel>
                 <Select
